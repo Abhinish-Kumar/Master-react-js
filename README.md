@@ -73,9 +73,53 @@ To be displayed in the browser ,React elements needs to be rendered (using React
 1. Elements that should have two tags,such as div,main,button, must have their closing,second tag in jsx, otherwise it will return in a syntax error.
 
    ```javascript
-
+   
+   <button>Click me</button>
+   
    ```
+#### How JSX elements are styled.
+1. Inline styles are written differently as well as comared to plain HTML.
+2. Inline styles must not be included as a string,but within an object.
+3. Once again,the style properties that we use must be written in the camel-case style.
 
+```javascript
+<h1 style={{color:"blue",fontSize:22,padding:"0.5rem 1rem"}}>
+
+  Hello World!
+
+</h1>;
+```
+Style properties that accepts pixels values (like width,height,padding,margin,etc) can use integers insted of strings.For example.fontsize:22 insted of fontSize:"22px".
+
+#### JSX can be conditionally displayed.
+1. New React developers may be wondering how it is beneficial that React can use Javascript code.
+2. One simple example if that conditionally hide or display JSX content, we can use any valid Javascript conditional,like an if statement or switch statement.
+```javascript
+
+const isAuthUser=true;
+
+if(isAuthUser){
+return <div>Hello World</div>
+}else{
+return <button>Login</button>
+}
+
+```
+3. Where are we returning this code? Within a React component,which we will cover in a letter section.
+
+#### JSX cannot be understood by the browser.
+1. As mentioned above ,JSX is not HTML ,but a part of javascript functions.
+2. In fact,writing <div>hello world</div> is JSX is just a more convinient and understandable way of writing code like the following:
+
+```javascript
+React.createElement("div",null,"Hello World")
+```
+3. Both pieces of code have the same output of "Hello World".
+4. To write JSX and have the browser understandable this different syntax,we must use a Transpiler to convert JSX to these functions calls.
+5. The most common transpiler is called Babble.
+
+
+# Components
 
 
 
