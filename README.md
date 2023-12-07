@@ -121,6 +121,21 @@ React.createElement("div",null,"Hello World")
 
 # Components
 
+#### What are react components?
+1. Insted of just rendering one or another set of JSX elements,we can include them within React components.
+2. Components are created using what looks like a normal Javascript function,but is different in that return JSX elements.
+
+```javascript
+
+function Greeting(){
+return <div>Hello ,React</div>
+}
+
+```
+
+#### Why use React Components?
+1. 
+
 
 
 
