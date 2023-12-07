@@ -213,10 +213,9 @@ Note that when attempting to return a number of JSX elements that are spread ove
    import Navbar from './components/Navbar';
    import Aside from './components/Aside';
    import Footer from './components/Footer';
-
-
-  function App(){
-  return (
+   
+   function App(){
+   return (
 
         <Layer/>
         <Navbar/>
@@ -228,6 +227,7 @@ Note that when attempting to return a number of JSX elements that are spread ove
 
  ReactDOM.render(<App/>,document.getElementById('root'));
  
+
    ```
 
 3. What is powerful about this is that we are using the customixation of components to describe what they are (ie. layout) and their function in our application.This tells us how they should be used just by looking at their name.
@@ -235,6 +235,7 @@ Note that when attempting to return a number of JSX elements that are spread ove
 
 #### Javascript can be used in JSX using curly braces.
 1. Just as we can use javasript variables within our components,we can use them directly within our JSX as well.
+# helllo
 
 
 
