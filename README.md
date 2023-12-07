@@ -134,7 +134,109 @@ return <div>Hello ,React</div>
 ```
 
 #### Why use React Components?
-1. 
+1. React comonents allow us to create more complex logic and structures within our React application than we would with JSX elements alone.
+2. Think of React components as our React elements that have their own functionality.
+3. As we know, functions allow us to create our own functionality and reuse it where we like across our application.
+4. Components are reusable whereever we like across our app and as many times as we like.
+
+#### Components are not normal javascript functions.
+1. How would we render or display the returned JSX from the component above?
+
+```javascript
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Greeting(){
+return <div>Hello react</div>;
+}
+
+ReactDOM.render(<Greeting/>,document.getElementById("root"));
+
+```
+2. We use the 'React' import to parse the JSX and ReactDOM to render our component to a root element with the id of 'root'.
+
+#### What can components return?
+1. Components can return valid JSX elements ,as well as string,numbers,booleans,the value null,as well as arrays and fragments.
+2. Why would we want to return null? It is common to return null if we want a component to display nothing.
+
+```javascript
+
+function Gretting(){
+
+if(isAuthUser){
+return "Hello again";
+}else{
+return null;
+}
+
+}
+
+```
+3. Another rule is that JSX elements must be wrapped in one parent element.Multiple sibling elements cannot be returned.
+4. If you need to return multiple elements ,but dont need to add another element to the DOM (usually for a conditional),You can use a special Recat component called a fragment.
+5. Fragments can be written as '<></>' or when you import React into your file,with <React.Fragment></React.Fragment>.
+
+```javascript
+
+function Greeting(){
+
+const isAuthUser = true;
+
+if(isAuthUser){
+return (
+
+<>
+<h1>Hello react</h1>
+<button>Logout</button>
+</>
+);
+}else{
+return null;
+}
+
+
+}
+```
+
+Note that when attempting to return a number of JSX elements that are spread over multiple lines,we can return it all using a set of parentheses () as you see in the example above.
+
+#### Components can return other componets.
+1. The most important thing components can return is other components.
+2. Below is a basic example of a React application contained with in a component called 'App' that returns multiple components.
+
+   ```javascript
+   import React from 'react';
+   import ReactDOM from 'react-dom';
+
+   import Layer from './components/Layer';
+   import Navbar from './components/Navbar';
+   import Aside from './components/Aside';
+   import Footer from './components/Footer';
+
+
+  function App(){
+  return (
+
+        <Layer/>
+        <Navbar/>
+        <Aside/>
+        <Footer/>
+
+  );
+  }
+
+
+ ReactDOM.render(<App/>,document.getElementById('root'));
+ 
+   ```
+
+1. What is powerful about this is that we are using the customixation of components to describe what they are (ie. layout) and their function in our application.This tells us how they should be used just by looking at their name.
+2. Additionally ,we are using the power of JSX to compose these components.In other words,to use the HTML-like syntax of JSX to structure them in an immediately understandable way(ie. the Navbar is at the top of the app,the Footer at the bottom,etc).
+
+#### Javascript can be used in JSX using curly braces.
+1. Just as we can use javasript variables within our components,we can use them directly within our JSX as well.
+
 
 
 
