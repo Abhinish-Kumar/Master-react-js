@@ -235,10 +235,61 @@ Note that when attempting to return a number of JSX elements that are spread ove
 #### Javascript can be used in JSX using curly braces.
 
 1. Just as we can use javasript variables within our components,we can use them directly within our JSX as well.
+2. There are a few core rules to using dynamic values within JSX ,however.
+3. JSX can accept any primitive values(strings,booleans,numbers),but it will not accept plain objects.
+4. JSX can also include expressions that resolve to these values.
+5. For Example,conditionals can be included within JSX using the ternary operator,since it resolve to a value.
 
+```javascript
 
+function Greeting(){
+const isAuthUser = true;
 
+return <div>{isAuthUser ? "Hello" : null} </div>;
+}
 
+```
+
+# Props
+
+#### Components can be passed values using props
+1. Data passed to components in javascript are called props.
+2. Props look identical to attributes on plain JSX/HTML elements,but you can access theirvalues within the component itself.
+3. Props are valuable in parameters of the component to which they are passed Props are always included as properties of an object.
+
+```javascript
+
+ReactDOM.render(
+
+<Greeting username="JOHN" />,
+document.getElementById("root")
+
+);
+
+function Greeting(props){
+return <h1>Hello {props.username}</h1>;
+}
+
+```
+#### Props cannot be directly changed
+1. Props must never be directly changed within the child component.
+2. Another way to say this that props should never be mutated,since props are a plain javascript object.
+
+```javascript
+
+//We cannot modify the props object:
+
+function header(props){
+
+props.username = "Doug";
+return <h1>Hello {props.name}</h1>;
+
+}
+
+````
+Components are considered pure functions. That is.for every input,we should be able to expect the same output.This means we cannot mutate the props object ,only read from it.
+
+# Special props:the children prop.
 
 
 
