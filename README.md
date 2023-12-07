@@ -228,7 +228,7 @@ Note that when attempting to return a number of JSX elements that are spread ove
   }
  
  ReactDOM.render(<App/>,document.getElementById('root'));
-   ``` ```
+    ```
 3. What is powerful about this is that we are using the customixation of components to describe what they are (ie. layout) and their function in our application.This tells us how they should be used just by looking at their name.
 4. Additionally ,we are using the power of JSX to compose these components.In other words,to use the HTML-like syntax of JSX to structure them in an immediately understandable way(ie. the Navbar is at the top of the app,the Footer at the bottom,etc).
 
