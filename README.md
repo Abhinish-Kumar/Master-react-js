@@ -289,7 +289,125 @@ return <h1>Hello {props.name}</h1>;
 ````
 Components are considered pure functions. That is.for every input,we should be able to expect the same output.This means we cannot mutate the props object ,only read from it.
 
-# Special props:the children prop.
+#### Special props:the children prop
+1. The children prop is useful if we want to pass elements/components as props to other components.
+2. The children prop is especially useful for when you want the same component(such as a Layout component) to wrap all other components.
+
+```javascript
+
+function Layout(props){
+return <div className="container>{props.children}</div>;
+}
+
+function IndexPage(){
+return (
+<Layout>
+
+<Header/>
+<Hero/>
+<Footer/>
+
+</Layout>
+)
+}
+
+function AboutPage(){
+return (
+<Layout>
+<About/>
+<Footer/>
+</Layout>
+)
+}
+
+
+
+```
+
+3. The benefit of this pattern is that all styles to the Layout component will be shared with its child components.
+
+## List and Keys 
+
+#### Iterate over arrays im JSX using map
+1. How do we disaplays lists in JSX using array data?
+2. Use the .map() funciton to convert lists of data (Arrays) into lists of elements.
+
+```javascript
+
+const people = ["John","smith","fred"];
+const peopleList = people.map((person)=><p>{person}</p>;
+
+```
+
+3. .map can be used for components as well as plain JSX elements.
+
+```javascript
+
+function App(){
+const people = ["John","smith","fred"];
+
+return (
+<ul>
+{people.map((person)=>(
+<Person name={person}/>
+))}
+</ul>
+)
+}
+);}
+
+
+function Person({name}){
+//We access the 'name' prop directly using object destructuring
+return <p>This person's name is : {name}</p>;
+}
+```
+
+
+#### The importance of Keys in lists
+1. Each React element within a list of elements needs a special key prop.
+2. Keys are essential for React to be able to keep track of each element that is being iterated over wiht the .map() fuction.
+3. React uses Keys to update individual elements when their data changes (insted of re-rendering the entire list).
+4. Keys need to have unique values to be able to identify each of them according tp their key value.
+
+```javascript
+
+function App(){
+const people = [
+{id:"Ksy7py",name:"john},
+{id:"ad7py",name:"rohn},
+{id:"fads7py",name:"sohn},
+];
+
+return (
+<ul>
+{person.map((person)=>(
+<Person key={person.id} name={person.name} />
+ )
+)
+}
+</ul>
+);
+}
+
+
+```
+
+
+## State and Managing Data
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
