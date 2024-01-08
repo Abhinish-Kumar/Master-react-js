@@ -434,6 +434,27 @@ ReactDOM.render(<Greeting />, document.getElementById("root"));
 
 ```javascript
 
+import React from "react";
+import { useState } from "react";
+import ReactDOM from "react-dom";
+
+function Greeting() {
+  const [counter, setCounter] = useState(10);
+  return (
+    <>
+      <button onClick={() => setCounter((prevCount) => prevCount - 1)}>
+        -
+      </button>
+      <h1>{counter}</h1>
+      <button onClick={() => setCounter((prevCount) => prevCount + 1)}>
+        +
+      </button>
+    </>
+  );
+}
+
+ReactDOM.render(<Greeting />, document.getElementById("root"));
+
 
 ```
 
