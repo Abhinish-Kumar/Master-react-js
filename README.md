@@ -403,8 +403,39 @@ return (
 
 
 
+# Practice
+
+```javascript
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+function Box(props) {
+  return <p>Name : {props.name}</p>;
+}
+
+function Greeting() {
+  return (
+    <>
+      <h1>List of employees</h1>
+      <Box name="Gungun gupta" />
+      <Box name="Abhinish" />
+      <Box name="Anjali singhania" />
+      <Box name="Radhika" />
+    </>
+  );
+}
+
+ReactDOM.render(<Greeting />, document.getElementById("root"));
 
 
+```
+
+
+```javascript
+
+
+```
 
 
 
