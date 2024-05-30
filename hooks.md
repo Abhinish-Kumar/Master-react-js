@@ -36,6 +36,70 @@ You can write the logic of the component outside the component that protect from
 
 
 
+# Hooks type
+
+## useState(), useEffect()
+Both are really very usefull hooks in react.
+
+1. useState()
+2. useEffect()
+
+### What is useState?
+useState is a hook that lets you add state variables to your functional components. Previously, only class components could have state, but with hooks, functional components can now manage state as well.
+
+
+### mechanish
+
+```javascript
+
+>> console.log(useState(200));
+<< Array(2)
+        0:200
+        1:f()
+```
+UseState return the array of two values
+
+1. Value that we pass in the useState().
+2. 2nd value is the function.
+
+Note:- to use both we have to extract it by destructuring it.
+
+```javascript
+
+const arr=useState(200);
+const state=arr[0];
+const useState=arr[1];
+
+```
+
+1. state store the current value.
+2. setState is a function that is used to update the state and rerender the state.
+
+
+Note:- const will show you error in state because constant value we can not change.
+
+```javascript
+
+<h1 onClick={()=>{
+
+     setState(200)
+
+}} {state}</h1>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
