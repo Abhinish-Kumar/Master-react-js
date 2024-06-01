@@ -117,6 +117,36 @@
 
 ---
 
+
+
+or 
+
+### Section C: Practical Tasks [50 Marks]
+
+#### Task 1: Custom Hooks and Side Effects [20 Marks]
+
+Create a simple application that demonstrates the use of custom hooks and side effects. The application should include:
+
+- A custom hook for fetching data from an API.
+- A component that uses this custom hook to display data.
+- Handling of loading and error states within the custom hook.
+
+#### Task 2: Form Handling and Validation [15 Marks]
+
+Develop a form in React that includes the following:
+
+- Input fields for name, email, and password.
+- Real-time validation and error messages.
+- Submission handling that displays a success message upon valid submission.
+
+#### Task 3: Using Redux for State Management [15 Marks]
+
+Build a simple application that demonstrates state management using Redux. The application should include:
+
+- A Redux store with at least one slice of state (e.g., a list of items).
+- Components that connect to the Redux store to read and update state.
+- A button to add new items to the list and a way to display the list of items.
+
 ### Instructions:
 
 - Answer all questions.
