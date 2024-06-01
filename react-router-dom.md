@@ -76,6 +76,11 @@ This is the basic of react-router-dom.
 
 
 
+## Nested Routing
+Nested routing in React Router lets you create routes within components, useful for organizing different sections of a user interface with their own navigation paths.
+
+
+
 
 
 
