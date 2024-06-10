@@ -4,7 +4,7 @@
 React Hooks are functions introduced in React 16.8 that allow you to use state and other React features without writing a class. Previously, managing state and side effects in React required class components. With Hooks, you can handle state, lifecycle methods, and other functionalities directly in functional components, making the code more concise and easier to understand. This means you can use functional components to do everything that you could do with class components, but in a simpler and more efficient way.
 
 ## Why we use hooks in react?
-React Hooks were introduced to address several limitations and complexities associated with class components.React Hooks provide a more straightforward and powerful way to manage state and side effects in functional components. They improve code readability, reusability, and maintainability while avoiding some of the pitfalls of class components. This makes development in React more efficient and enjoyable.
+React Hooks were introduced to address several limitations and complexities associated with class components.React Hooks provide a more straightforward and powerful way to manage state and side effects in functional components. 
 
 ## What are the react features?
 React Hooks provide a more straightforward and powerful way to manage state and side effects in functional components. They improve code readability, reusability, and maintainability while avoiding some of the pitfalls of class components. This makes development in React more efficient and enjoyable.
