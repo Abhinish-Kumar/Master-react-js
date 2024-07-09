@@ -116,60 +116,6 @@ Key points
 
 
 
-  
-```javascript
-import React,{useState} from "react";
-
-function App(){
-return (
-<button>-</button>
-<span>0<span>
-<button>+</button>
-)
-}
-```
-
-useState:- is a function that accepts the default value of a state, and it reutn an array of values , the first value is the current state and the second value is the function that updates the current state.
-
-
-```javascript
-import React,{useState} from "react";
-
-function App(){
-return (
-//const arr=useState(5)
-const [counter,setCounter]= useState(5)
-
-function decrementCount(){
-setCounter(count -1)
-setCounter(count -1)
-//only decreases by one
-//they are over riding each other 
-}
-
-//good way to update the state
-
-function decrementCount(){
-setCounter(prevCount => prevCount - 1)
-//it takes the previous updated state
-}
-
-function incrementCount(){
-setCounter(prevCount => prevCount + 1)
-//it takes the previous updated state
-}
-
-<button onClick={decrementCount}>-</button>
-<span>{count}<span>
-<button onClick={incrementCount}>+</button>
-)
-}
-```
-
-If state updates react re-render the component with the new value od state. When you update the state your component re-renders.
-
-
-
 
 
 
