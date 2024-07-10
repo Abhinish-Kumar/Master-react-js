@@ -157,6 +157,125 @@ Its a special case
 
 
 
+## Folder structure of react app
+
+```javascript
+my-react-app/
+├── node_modules/       # Installed npm packages (not shown in detail)
+├── public/             # Static files
+│   ├── favicon.ico     # Favicon icon
+│   ├── index.html      # Main HTML file
+│   └── ...
+├── src/                # Source files
+│   ├── assets/         # Images, fonts, and other assets
+│   ├── components/     # React components
+│   │   ├── Header.js   # Example component
+│   │   ├── Sidebar.js  # Example component
+│   │   └── ...
+│   ├── App.js          # Main component
+│   ├── index.js        # Entry point for React rendering
+│   └── ...
+├── .gitignore          # Git ignore file
+├── package.json        # Project configuration and dependencies
+├── README.md           # Project documentation
+└── ...
+
+```
+
+## index.html
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React App</title>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>
+
+```
+This <div> serves as the mounting point for the React application. React will inject and manage its components within this element.
+It will work as a root node in a vertual dom tree in react or first and top component.
+
+
+
+## Index.js
+
+It serves as the entry point for rendering the React components into the DOM.
+
+```Javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+
+const root = ReactDOM.createRoot(document.getElementById('root');
+//create a root node of tree
+
+root.render(<App/>);
+//render our app component in the root node
+
+
+```
+
+Explanation:- "root" is the entry point of index.js , ReactDOM.createRoot methd takes an html element and make it a root node. 
+We are rendering the <App/> component in the root node. 
+
+Note:- We created an HTML node and designated it as the root node. Then, we used the render method to attach the App component to this root node.
+
+Note:- Onle html file is required always to render the react appliaction. This act as a single page where we render different components with javascript dynamically without page reload.
+
+
+## Flow
+
+1. npm start
+2. npm start will run index.js file
+3. In index.js file "react script" loaded and then "ReactDom" loads.
+4. With the help of react dom we will create a root node by capturing a node from index.html file.
+5. And at last <App/> component will be rendered.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
