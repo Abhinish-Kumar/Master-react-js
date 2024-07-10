@@ -42,11 +42,11 @@ Note:- vite, parcel are other tool chain to install react.
 
 Note:- Install (React-developer-tool) in chrome , and set it and when ever you visit any react site it will shine.
 
-<img src="devTool1" />
+<img src="./devTool1" />
 
-<img src="devTool2" />
+<img src="./devTool2" />
 
-<img src="devTool3" />
+<img src="./devTool3" />
 
 
 
