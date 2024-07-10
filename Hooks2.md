@@ -223,6 +223,10 @@ Here, state is an object containing both count and theme. When you update the st
 
 
 
+# useEffect()
+
+
+
 
 
 
