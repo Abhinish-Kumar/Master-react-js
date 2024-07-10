@@ -115,6 +115,50 @@ Key points
 - Using Previous State:- Using a function with prevCount inside setCounter ensures that the state updates are based on the most recent state, avoiding conflicts and ensuring accurate updates.
 
 
+### Note
+
+If we have a value inside useState() that render the component multiple time in a minut then its not good to have. becasue it decreases teh performance of our app.useState() runs every time component re renders.
+
+Solution :- to run useState hook at first time only pass a function to it. 
+
+```javascript
+ const [counter, setCounter] = useState(()=>{
+console.log("running");
+return 4;
+});
+```
+
+
+This will run every time our component renders.
+
+```javascript
+
+function countInitial(){
+console.log("running");
+return 4;
+}
+function App() {
+   // const [counter, setCounter] = useState(countInitial());
+//run only once 
+const [counter, setCounter] = useState(()=>countInitial());
+    function decrementCount() {
+        setCounter(prevCount => prevCount - 1);
+    }
+
+    function incrementCount() {
+        setCounter(prevCount => prevCount + 1);
+    }
+
+    return (
+        <>
+            <button onClick={decrementCount}>-</button>
+            <span>{counter}</span>
+            <button onClick={incrementCount}>+</button>
+        </>
+    );
+}
+
+```
 
 
 
