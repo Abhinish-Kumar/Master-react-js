@@ -240,14 +240,80 @@ Note:- Onle html file is required always to render the react appliaction. This a
 5. And at last <App/> component will be rendered.
 
 
+## What is App component
+
+Its a function  used to create components.
+
+We can use it as a html element.
+
+It replaces the name of react Component to the actual value of the component that we define in the function body or component body.
+
+```javascript
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <h1>Hello, React!</h1>
+      <p>This is the App component.</p>
+      {/* Other components or JSX elements */}
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+Component is nothing but a function that returns UI
 
 
 
+## JSX
+
+Accept any HTML tag and create new tags that represent component , It combines the HTML and Javascript.
+
+```javascript
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <h1>Hello, React!</h1> //JSX
+      <p>This is the App component.</p>
+      {/* Other components or JSX elements */}
+   {/* write any valid javascript expression*/ }
+    </div>
+  );
+}
+
+export default App;
+```
+
+{} is renders the thing that is return by a function. 
+
+1. Used to write any attribute dynmically.
 
 
+```javascript
+import React from 'react';
 
+function App() {
+let name="header";
+  return (
+    <div>
+      <h1 className={name}>Hello, React!</h1>
+{console.log("hello")}
+    </div>
+  );
+}
 
+export default App;
+```
 
+2. Atleast every thing is modify able.
+3. No HTML is there
+4. {console.log("hello")} it will print the ans 2 time because of strict mode.
 
 
 
