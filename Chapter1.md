@@ -33,9 +33,7 @@ create-react-app: The toolchain for setting up a new React application.
 
 This command sets up a new React project named my-app and automatically installs a development server and other necessary dependencies. React itself is based on Node.js, so the installation includes Node.js-related tools.
 
-```javascript
->>> npm start
-```
+
 
 
 Note:- vite, parcel are other tool chain to install react.
@@ -51,19 +49,111 @@ Note:- Install (React-developer-tool) in chrome , and set it and when ever you v
 
 
 
+```javascript
+>>> npm start
+```
+
+
+To start your React app using CRA, you can access it via:
+
+1. Local Server:
+
+```javascript
+
+http://localhost:3000
+
+```
+
+2. On Your Network:
+
+
+```javascript
+
+http://192.128.1.3:3000
+
+```
+
+These URLs allow you to access your React application locally and on your network, respectively, after starting the development server with "npm start" or "yarn start".
 
 
 
+## Index.html 
 
 
+In a single-page application, this is the singular page where our React application will be attached.
+
+## Error
+
+Whenever you delete a file, React will show an error because it can't find the reference to that file anymore.
+
+```javascript
+>>> CTRL + Click to file 
+```
 
 
+## NPM start
+
+"start" is a script defined in package.json that specifies the command to start your application.
+It's commonly used for starting development servers, running build processes, or initiating any necessary tasks to launch your application.
+
+```javascript
+{
+  "name": "my-react-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
+
+```
 
 
+```javascript
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test"
+  }
+
+```
+With "npm" you can run any script.
+
+```javascript
+>>> npm run start
+Its a special case
+>>> npm start
 
 
-
-
+>>> npm run build
+>>> npm run test
+```
 
 
 
