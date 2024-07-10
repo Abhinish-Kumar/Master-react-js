@@ -115,11 +115,11 @@ Key points
 - Using Previous State:- Using a function with prevCount inside setCounter ensures that the state updates are based on the most recent state, avoiding conflicts and ensuring accurate updates.
 
 
-### Note
+### Optimizing useState Initialization
 
-If we have a value inside useState() that render the component multiple time in a minut then its not good to have. becasue it decreases teh performance of our app.useState() runs every time component re renders.
+When you initialize state with a value, like useState(4), this initialization runs every time the component re-renders, which can be inefficient if the initialization is complex.
 
-Solution :- to run useState hook at first time only pass a function to it. 
+Solution :- To avoid running the initialization code multiple times, you can pass a function to useState. This function runs only once when the component mounts(render)
 
 ```javascript
  const [counter, setCounter] = useState(()=>{
@@ -129,18 +129,39 @@ return 4;
 ```
 
 
-This will run every time our component renders.
+Here, the initialization function only runs once, improving performance.
+
+
+
+Another way: You can define the initialization function separately and pass it to useState.
+
+```javascript
+function countInitial() {
+    console.log("running");
+    return 4;
+}
+
+//run every time component re-render
+const [counter, setCounter] = useState(countInitial());
+
+//run once only
+const [counter, setCounter] = useState(() => countInitial());
+
+```
+
+
+Full Example with Optimization
 
 ```javascript
 
-function countInitial(){
-console.log("running");
-return 4;
+function countInitial() {
+    console.log("running");
+    return 4;
 }
+
 function App() {
-   // const [counter, setCounter] = useState(countInitial());
-//run only once 
-const [counter, setCounter] = useState(()=>countInitial());
+    const [counter, setCounter] = useState(() => countInitial());
+
     function decrementCount() {
         setCounter(prevCount => prevCount - 1);
     }
@@ -161,9 +182,42 @@ const [counter, setCounter] = useState(()=>countInitial());
 ```
 
 
+### useState with an object.
+Sometimes, you have multiple pieces of state that you want to group together. Instead of creating multiple useState hooks, you can use a single hook with an object.
 
+```javascript
+function App() {
+    const [state, setState] = useState({ count: 4, theme: "blue" });
 
+    function decrementCount() {
+        setState(prevState => {
+            return { ...prevState, count: prevState.count - 1 };
+        });
+    }
 
+    function incrementCount() {
+        setState(prevState => {
+            return { ...prevState, count: prevState.count + 1 };
+        });
+    }
+
+    return (
+        <>
+            <button onClick={decrementCount}>-</button>
+            <span>{state.count}</span>
+            <span>{state.theme}</span>
+            <button onClick={incrementCount}>+</button>
+        </>
+    );
+}
+
+```
+
+Here, state is an object containing both count and theme. When you update the state, you use the spread operator ...prevState to keep the other properties intact.
+
+### Key Points:
+1. Optimization: Use a function to initialize state to ensure it runs only once.
+2. Grouping State: Use an object in useState to manage multiple pieces of state together, reducing the number of hooks and simplifying updates.
 
 
 
