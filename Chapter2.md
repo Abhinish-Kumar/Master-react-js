@@ -3,7 +3,8 @@
 Components are the functions that return UI.
 we can change UI functionality like a normal functions.
 
-1. ```javascript
+
+```reactjs
 
 //App.js
 
@@ -13,9 +14,9 @@ return <h1>Hello World</h1>
 
 export default app;
 
-   ```
+```
 
-```javascript
+```reactjs
 import App from "./App.js"
 
 </App>
