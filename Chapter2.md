@@ -495,7 +495,7 @@ export default Video;
 # Final project 
 
 
-``Javascript 
+```Javascript 
 
 import Video from "./Video";
 import "./App.css";
