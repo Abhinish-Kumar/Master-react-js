@@ -222,18 +222,103 @@ Fragments follow the rule of having one parent component without adding extra el
 
 
 
+## Rule 2
+
+Because JSX is JavaScript, we can't use `class` as an attribute for HTML elements since `class` is a reserved word in JavaScript. Instead, we use `className`
 
 
 
+JSX follows camelCase convention for attributes. For example, use `backgroundColor`,`onClick()`.
 
 
+```javascript
+
+// style={{}}
+
+style={{ backgroundColor: "red" }}
+
+// {} allows us to pass a variable to React, and React ...
+
+```
+
+In JSX, we use double curly braces {{}} for inline styles. For example, `style={{ backgroundColor: "red" }}`. The outer `{}` lets us write JavaScript expressions, and the inner `{}`defines an object. This way, we can pass a variable to React, and React applies the style.
 
 
+Inline CSS in React takes an object because it aligns with the way JavaScript handles styles, allowing for dynamic and programmatic styling. By using objects, we can easily define styles using JavaScript's camelCase syntax and leverage the full power of JavaScript to compute styles, manage state, and pass variables.
+
+```javascript
+const myStyle = {
+    backgroundColor: "red",
+    color: "white"
+};
+
+<div style={myStyle}>Hello, world!</div>
+
+```
+This approach provides a more seamless and powerful way to handle styles within components.
 
 
+How JSX use variable
+
+In JSX, we can use variables directly within our components. We can create variables for anything inside a component and use them in the JSX markup.
 
 
+```javascript
+function Video() {
+    // Define variables for use in the component
+    let title = "React JS Mastery Course";
+    let bg = "dark";
 
+    return (
+        <>
+            {/* Use the variables within JSX */}
+            <div className={bg} style={{ backgroundColor: "red" }}>
+                {title}
+            </div>
+        </>
+    );
+}
+
+```
+
+This demonstrates how to dynamically use JavaScript variables within JSX for classes, styles, and content.
+
+We can use any attribute as variable.
+
+CSS property act as object because JSX is Javascript
+Some time we pass object for style a component
+
+
+## Rule 3
+
+In React, all elements must be properly closed. While HTML accepts `<img>`, React requires it to be self-closed as `<img />`.
+
+Tip: Use an HTML to JSX converter to help with the syntax.
+
+
+```html
+<!-- Incorrect in React -->
+<img>
+
+<!-- Correct in React -->
+<img />
+
+```
+
+React enforces this rule to ensure that all components and elements follow the XML-like syntax.
+
+
+## Rule 4
+
+In React, to associate a `<label>` with a form element using the `for` attribute as in HTML, you should use `htmlFor` instead. Here's the correct way to write it in JSX:
+
+
+```html
+
+<label htmlFor="name">Label Text</label>
+
+```
+In this example, `htmlFor` is used to specify the ID of the form element that this `<label>` is associated with, similar to the for attribute in HTML. This ensures accessibility and proper behavior in React applications.
 
 
 
