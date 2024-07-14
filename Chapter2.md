@@ -322,3 +322,51 @@ In this example, `htmlFor` is used to specify the ID of the form element that th
 
 
 
+
+
+
+
+
+
+
+# Continue cour project
+
+```javascript
+function Video() {
+  return (
+    <div>
+      <img
+        src="https://graphicsfamily.com/wp-content/uploads/edd/2021/02/Digital-marketing-agency-banner-template-design-2048x1152.jpg"
+        alt=""
+      />
+      <div>React js mastery course</div>
+    </div>
+  );
+}
+
+export default Video;
+```
+
+
+```javascript
+import Video from "./Video";
+import "./App.css";
+
+function App() {
+  return (
+    <>
+      <h1>Hello World</h1>
+      <Video />
+      <Video />
+    </>
+  );
+}
+
+export default App;
+
+```
+
+
+
+
+
