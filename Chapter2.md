@@ -367,6 +367,80 @@ export default App;
 ```
 
 
+<img src="image/image.png" />
+
+
+
+
+### Both `Video` tag are showing the same content. 
+
+Both <Video> tags currently display identical content. In real-world scenarios, they should be unique. To achieve dynamic content changes based on function interactions, simply modify the function to update the UI accordingly.
+This capability allows you to adjust the impact of any function as needed.
+
+
+For this we have to pass the different content for both the function with `props` . Because one function give different output when we change the prop.
+
+
+To ensure each <Video> tag displays different content dynamically, you need to pass unique props to each function instance. This approach allows each function to produce distinct outputs based on the prop values you provide.
+
+
+```javascript
+
+import Video from "./Video";
+import "./App.css";
+
+function App() {
+  return (
+    <>
+      <h1>Hello World</h1>
+      <Video title="React js" />
+      <Video title="Node js" />
+    </>
+  );
+}
+
+export default App;
+
+
+```
+
+
+```javascript
+function Video(props) {
+  return (
+    <div>
+      <img
+        src="https://graphicsfamily.com/wp-content/uploads/edd/2021/02/Digital-marketing-agency-banner-template-design-2048x1152.jpg"
+        alt=""
+      />
+      <div>{props.title} mastery course</div>
+    </div>
+  );
+}
+
+export default Video;
+```
+
+<img src="" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
