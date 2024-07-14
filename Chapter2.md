@@ -584,8 +584,14 @@ img{
 <img src="image/image3.png" />
 
 
+Note:- 
 
+1. You can use default `prop` value in component and if component get no prop passed from parent it simply render the default `prop`.
+2. We can also create a `default component` that creats with default value.
 
+ ```javascript
+function Video({ title="default value" }) {
+```
 
 
 
