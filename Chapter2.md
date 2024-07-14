@@ -495,7 +495,8 @@ export default Video;
 # Final project 
 
 
-``javascript
+``Javascript 
+
 import Video from "./Video";
 import "./App.css";
 
@@ -527,7 +528,8 @@ export default App;
 
 
 
-```javascript
+```Javascript 
+
 import "./Video.css";
 function Video({ title, channel, views, time }) {
   return (
@@ -581,7 +583,7 @@ img{
 ```
 
 
-<img src="image/image3.png" />
+<img src="./image3.png" />
 
 
 Note:- 
