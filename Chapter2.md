@@ -85,7 +85,6 @@ function App() {
   return ( // because return same line value
     <div className="App">
         <Video />
-      </header>
     </div>
   );
 }
