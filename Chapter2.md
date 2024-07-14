@@ -421,7 +421,167 @@ function Video(props) {
 export default Video;
 ```
 
-<img src="" />
+
+<img src="image/image2.png" />
+
+
+The Video component receives a props object with a title property passed from the App component
+
+Props flow from parent to child components, allowing for dynamic content rendering and component reusability.
+
+`props` is a object that accepts key from parent and store it within it. 
+
+Key Point :-
+
+1. Dont use `props` keyword use Destructurin
+2. Use `key` in common components.
+3. `props` are for read only.
+4. `style={{ background:  {bgColor}  }}` wrong. `style={{ background:  bgColor  }}`  work.
+5. `props` will not change the value , on re render because its for read only. children can not modify it.
+
+
+```javascript
+
+function Video({ title }) {
+  return (
+    <div>
+      <img
+        src="https://graphicsfamily.com/wp-content/uploads/edd/2021/02/Digital-marketing-agency-banner-template-design-2048x1152.jpg"
+        alt=""
+      />
+      <div key={title}>{title} mastery course</div>
+    </div>
+  );
+}
+
+export default Video;
+
+
+```
+
+
+
+Note:- you can pass any value with props from variable to function. 
+
+```javascript
+
+<Video title="React js" bgColor="red" />
+<Video title="Node js" bgColor="green" />
+ 
+```
+
+```javascript
+function Video({ title, bgColor }) {
+  return (
+    <div>
+      <img
+        src="https://graphicsfamily.com/wp-content/uploads/edd/2021/02/Digital-marketing-agency-banner-template-design-2048x1152.jpg"
+        alt=""
+      />
+      <div key={title} style={{ background:  bgColor  }}>
+        {title} mastery course
+      </div>
+    </div>
+  );
+}
+
+export default Video;
+
+```
+
+6. But ,Why props are for read only. 
+
+
+# Final project 
+
+
+``javascript
+import Video from "./Video";
+import "./App.css";
+
+function App() {
+  return (
+    <>
+      <h1>Hello World</h1>
+      <Video
+        title="React js"
+        bgColor="red"
+        channel="Hello Dodo"
+        views="1M"
+        time={"4 months ago"}
+      />
+      <Video
+        title="Node js"
+        bgColor="green"
+        channel="Hello Dodo"
+        views="10M"
+        time={"2 months ago"}
+      />
+    </>
+  );
+}
+
+export default App;
+
+```
+
+
+
+```javascript
+import "./Video.css";
+function Video({ title, channel, views, time }) {
+  return (
+    <div className="container" key={title}>
+      <div className="pic">
+        <img
+          src="https://graphicsfamily.com/wp-content/uploads/edd/2021/02/Digital-marketing-agency-banner-template-design-2048x1152.jpg"
+          alt=""
+        />
+      </div>
+
+      <div>{title} mastery course</div>
+      <div className="channel">{channel} </div>
+      <div className="views">
+        {views} views <span>.</span> {time}
+      </div>
+    </div>
+  );
+}
+
+export default Video;
+
+```
+
+```css
+
+img{
+            width: 300px;
+}
+
+.container{
+            border: 1px solid black;
+            width: 300px;
+            margin: 1rem;
+            padding: .5rem;
+            background-color: rgb(0, 0, 0);
+            color: white;
+}
+
+.pic img{
+           
+            border-radius: 1rem;
+}
+
+.views{
+            font-size: .5rem;
+}
+.channel{
+            font-size: .5rem;
+}
+```
+
+
+<img src="image/image3.png" />
 
 
 
