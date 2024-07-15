@@ -43,6 +43,60 @@ Decoded data
 
 
 
+## Authentication Authorization
+
+
+Authentication :- Prove that its you
+Authorized :- You have authority to use this feature
+
+
+These are the best use of JWT
+
+
+
+## How to store JWT token to clent browser securely.
+
+1. store JWT token to localStorage
+2. in session Storage
+3. Cookies(more secure)
+
+
+Best way is to expire the key. (refresh token mechanism)
+
+
+## Flow 
+
+Client request to the server with login detail , server give a token to the client, every time your request took token with itself.
+
+1. access token
+2. refresh toke (to renew your access token when it expires)(stateful)
+
+
+## JWT vs sessions
+
+1. client
+2. server
+3. database
+
+
+### How we use stateless mechanism. 
+
+Client send login detail to server server check user in database and then issue a JWT Token to the client from server. 
+And when client send a token to the server , we directly velidate the token to the server without database interaction, because its stateless, and we have public private mechanism. 
+
+Why :- refresh token facility, not interaction with database thats why its fast.
+
+### Session
+
+Statefull
+
+
+Client send login detail to server, validate with database, send ckkoie session id, to store in browser, same session id is already stored in our database.Always DB call. Slow.
+
+
+
+
+
 
 
 
