@@ -22,6 +22,8 @@ keys to unlock access
 
 JWT takes data enrypt it , by encryption algorithm (HS256)
 
+<img src="/image/JWT1.png" />
+
 Encoded code looks like :- `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
 
 divided into 3 parts
