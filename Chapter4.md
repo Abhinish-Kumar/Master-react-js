@@ -156,17 +156,128 @@ function PlayButton({ message, children, onPlay, onPause }) {
   );
 }
 
+
+
+<PlayButton
+        message={"play button clickd"}
+        onPlay={() => console.log("Play ")}
+        onPause={() => console.log("Pause ")}
+      >
+        Play
+ </PlayButton>
+
 ```
 
 
 Only `state` can change the dom ui. 
 
 
+### Pass button in every video with children prop.
+
+```javascript
+import React from "react";
+import Video from "./Video";
+import "./App.css";
+import videos from "./data.js";
+
+function PlayButton({ message, children, onPlay, onPause }) {
+  let playing = true;
+  function handleClick(e) {
+    //e here is a event object
+    //prevent event propagation
+    e.stopPropagation();
+    //stop default behaviour like submit
+    e.preventDefault();
+    if (playing) onPlay();
+    else onPause();
+
+    playing = !playing;
+  }
+  return (
+    <button onClick={handleClick}>
+      {children} {playing ? "||" : ">"}
+    </button>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <h1>Hello Dodo</h1>
+
+      {/* <PlayButton
+        message={"pause button clickd"}
+        onClick={() => console.log("Kumar ")}
+      >
+        Pause
+      </PlayButton> */}
+      <div className="main-body">
+        {videos.map((video) => {
+          return (
+            <Video
+              key={video.id}
+              title={video.title}
+              bgColor={video.bgColor}
+              channel={video.channel}
+              views={video.views}
+              time={video.time}
+              verified={video.verified}
+            >
+              <PlayButton
+                message={"play button clickd"}
+                onPlay={() => console.log("Play " + video.title)}
+                onPause={() => console.log("pause " + video.title)}
+              >
+                {video.title}
+              </PlayButton>
+            </Video>
+          );
+        })}
+      </div>
+    </>
+  );
+}
+
+export default App;
+
+```
 
 
+```javascript
+import "./Video.css";
+import img from "./image.png";
+function Video({ title, channel, views, time, verified, children }) {
+  return (
+    <div className="container" key={title}>
+      <div className="pic">
+        <img src={img} alt="" />
+      </div>
+
+      <div>{title} mastery course</div>
+
+      <div className="channel">
+        {channel} {verified ? "✅" : null}{" "}
+      </div>
+      {/* <div className="channel">
+        {channel} {verified && "✅"}
+      </div> */}
+
+      <div className="views">
+        {views} views <span>.</span> {time}
+      </div>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+export default Video;
+
+```
 
 
+Every video has its own separate button with separate functionality.
 
+<img src="" />
 
 
 
