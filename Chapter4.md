@@ -277,7 +277,7 @@ export default Video;
 
 Every video has its own separate button with separate functionality.
 
-<img src="" />
+<img src="./image/chapter4.png" />
 
 
 
