@@ -84,6 +84,123 @@ Nested routing in React Router lets you create routes within components, useful 
 
 
 
+# Router Hook for dynamic routing
+
+
+```javascript
+import "./App.css";
+import { Routes, Route, Link, useParams } from "react-router-dom";
+let users = [
+  {
+    id: 1,
+    name: "Abhinish",
+    desc: "lorem this is a story of thirsty corow ",
+    study: "Ct university",
+  },
+  {
+    id: 2,
+    name: "Vicky",
+    desc: "lorem this is a story of thirsty corow ",
+    study: "Ct university",
+  },
+  {
+    id: 3,
+    name: "Aaditya",
+    desc: "lorem this is a story of thirsty corow ",
+    study: "Ct university",
+  },
+];
+
+function Card({ name, study, desc }) {
+  return (
+    <>
+      <div className="card">
+        <div id="img"></div>
+        <h4>Name:- {name}</h4>
+        <h4>Collage:- {study}</h4>
+        <p>{desc}</p>
+      </div>
+    </>
+  );
+}
+function Product() {
+  let { id } = useParams();
+  let user = users.filter((obj) => +obj.id === +id);
+  return (
+    <div id="product">
+      <h1>{user[0].name}</h1>
+      <h1>{user[0].study}</h1>
+      <p>{user[0].desc}</p>
+    </div>
+  );
+}
+
+function Contact() {
+  return (
+    <div className="form">
+      <h1>This is a contact page</h1>
+      <form>
+        <input type="text" placeholder="Enter your name"></input>
+        <input type="text" placeholder="Enter your age"></input>
+        <input type="text" placeholder="Enter your gmail"></input>
+        <button>Submit</button>
+      </form>
+    </div>
+  );
+}
+function Home() {
+  return (
+    <div className="home">
+      {users.map((u) => (
+        // <Route path="/home/:name" Component={Card} />
+        <>
+          <Link to={`/home/${u.id}`}>
+            <Card name={u.name} desc={u.desc} study={u.study} />
+          </Link>
+        </>
+      ))}
+    </div>
+  );
+}
+function App() {
+  return (
+    <>
+      <header>
+        <ul>
+          <Link to="/home">Home</Link>
+          <Link to="/contact">Contact</Link>
+        </ul>
+      </header>
+      <div id="main">
+        <Routes>
+          <Route path="/home" Component={Home} />
+          <Route path="/contact" Component={Contact} />
+          <Route path="/home/:id" Component={Product} />
+        </Routes>
+      </div>
+    </>
+  );
+}
+
+export default App;
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
